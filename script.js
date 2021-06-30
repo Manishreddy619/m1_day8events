@@ -34,8 +34,16 @@ divPara.addEventListener('mouseover', changePcontent);
 /* EXERCISE 4
       Write a function for changing the destination of every link to https://www.google.com
       */
+let links = document.getElementsByTagName('a');
+const changeUrls = function () {
+	let i, le;
 
-const changeUrls = function () {};
+	for (i = 0, le = links.length; i < le; i++) {
+		links[i].href =
+			'http://www.google.com/?redirect=' + encodeURIComponent(links[i].href);
+	}
+};
+changeUrls();
 
 /* EXERCISE 5
        Write a function for adding a new item in the second list.
@@ -76,7 +84,7 @@ const firstUlDisappear = function () {
 	//
 	firstUl.remove();
 };
-secondUl.onclick = firstUlDisappear;
+firstUl.onclick = firstUlDisappear;
 // firstUlDisappear();
 /* EXERCISE 8
       Write a function for making the background of every UL green.
@@ -93,14 +101,14 @@ everyUl[0].ondblclick = paintItGreen;
 /* EXERCISE 9
       Make the heading of the page change color every time the user clicks on it.
       */
-function getRandomColor() {
-	var letters = '0123456789ABCDEF';
-	var color = '#';
-	for (var i = 0; i < 6; i++) {
-		color += letters[Math.floor(Math.random() * 16)];
-	}
-	return color;
-}
+const setBg = () => {
+	const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+	console.log(randomColor);
+	document.body.style.backgroundColor = '#' + randomColor;
+	color.innerHTML = '#' + randomColor;
+};
+
+document.querySelector('body').addEventListener('click', setBg);
 
 /* EXERCISE 10
       Change the footer text with something else when the user clicks on it.
