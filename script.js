@@ -5,7 +5,7 @@
 let mainTitle = document.querySelector('h1');
 
 const changeTitle = function (newtitle) {
-	newtitle = 'This title has been changed';
+	newtitle = 'This title has been changed😛';
 	mainTitle.innerText = newtitle;
 };
 // mainTitle.onclick = changeTitle;
@@ -28,7 +28,7 @@ let divPara = document.querySelectorAll('p')[0];
 // console.log(divPara);
 const changePcontent = function () {
 	//
-	divPara.innerHTML = '<h2>This para is modified to header 2 </h2>';
+	divPara.innerHTML = '<h2>This para is modified to header 2 😑</h2>';
 };
 divPara.addEventListener('mouseover', changePcontent);
 /* EXERCISE 4
@@ -59,7 +59,7 @@ console.log(parentDiv);
 
 const addParagraph = function (content) {
 	//
-	content = 'This new paragraph  just now added';
+	content = 'This new paragraph  just now added 🤩';
 	let element = document.createElement('p');
 	element.id = 'para';
 	element.innerHTML = content;
@@ -101,33 +101,33 @@ function getRandomColor() {
 	}
 	return color;
 }
-let myclick = Document.querySelector('body');
-const makeItClickable = function () {
-	//
-	Document.querySelector('body').style.backgroundColor = `${getRandomColor()}`;
-};
-myclick.onclick = makeItClickable;
+
 /* EXERCISE 10
       Change the footer text with something else when the user clicks on it.
       */
-
+let footerpara = document.querySelectorAll('p')[1];
+console.log(footerpara);
 const changeFooterText = function () {
 	//
+	footerpara.style.color = 'orange';
+	footerpara.innerText = 'this para is chnaged with color and text toooooo😎';
 };
-
+footerpara.onclick = changeFooterText;
 /* EXERCISE 11
       Attach an event listener to the input field in the page for console logging its value just after any keystroke.
       */
 
 const inputField = document.getElementById('input-field');
 // ...
-
+inputField.addEventListener('keydown', (event) => {
+	console.log(event.key); // prints ","
+});
 /* EXERCISE 12
       Create a new welcome alert message when the page successfully loads.
       */
 
 window.onload = function () {
-	//
+	alert('hello welcome to my world');
 };
 
 /* EXERCISE 13
